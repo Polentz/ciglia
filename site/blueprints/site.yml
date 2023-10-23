@@ -1,5 +1,53 @@
 title: Site
 
-sections:
-  pages:
-    type: pages
+tabs:
+  home:
+    label: Pages
+    icon: star
+    sections:
+      pages:
+        type: pages
+  media:
+    label: Media Library
+    icon: star
+    sections:
+      library:
+        type: fields
+        fields:
+          library:
+            label: All media
+            type: files
+            width: 1/1
+            template: image
+            uploads: image
+            multiple: true
+            image:
+              icon: true
+              ratio: 4/3
+              back: white
+              cover: true
+  menu:
+    label: MENU
+    icon: grid
+    sections:
+      drawings:
+        type: fields
+        fields:
+          drawings:
+            type: files
+            template: image
+            uploads: image
+            layout: cards
+            multiple: true
+            min: 4
+            max: 4
+            image:
+              icon: true
+              ratio: 4/3
+              back: white
+              cover: true
+
+
+
+
+

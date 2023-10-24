@@ -2,6 +2,10 @@ Title: Ciglia
 
 ----
 
+Contact: 
+
+----
+
 Library:
 
 - file://MhHMMmdySWWbnluo
@@ -21,6 +25,35 @@ Library:
 - file://6SDr0HSj9PufAXLK
 - file://RtfmZ2pQBPzltc9Q
 - file://vI9m0DhWLS3SV2RS
+
+----
+
+Description: 
+
+----
+
+Keywords: 
+
+----
+
+Ogimage: 
+
+----
+
+Credits: 
+
+----
+
+Partners: 
+
+----
+
+Menu:
+
+- file://aalwOexAE9HnOibO
+- file://JfO1lTi6eiRRJojx
+- file://iHxtgl7hYgLCroxX
+- file://RtfmZ2pQBPzltc9Q
 
 ----
 

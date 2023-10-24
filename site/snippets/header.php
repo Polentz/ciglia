@@ -63,7 +63,7 @@
         <h2>via della lana<br>e della seta</h2>
     </header>
 
-    <button class="menu-opener" type="button">
+    <button id="menu-opener" class="menu-opener" type="button">
         <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M8 4C8 6.20914 6.20914 8 4 8C1.79086 8 0 6.20914 0 4C0 1.79086 1.79086 0 4 0C6.20914 0 8 1.79086 8 4Z"/>
             <path d="M20 4C20 6.20914 18.2091 8 16 8C13.7909 8 12 6.20914 12 4C12 1.79086 13.7909 0 16 0C18.2091 0 20 1.79086 20 4Z"/>
@@ -72,7 +72,7 @@
         </svg>
     </button>
 
-    <menu class="menu">
+    <menu id="menu" class="menu">
         <div class="menu-wrapper">
             <nav class="nav">
                 <ul class="site-nav">
@@ -90,11 +90,16 @@
                     </li>
                 </ul>
                 <div class="page-nav">
-                    <!-- <div class="page-nav-item">
-                        <?php foreach($site->library()->toFiles() as $drawing) : ?>
-                            <img src="<?= $drawing->url() ?>" alt="<?= $drawing->altTag() ?>">
-                        <?php endforeach ?>
-                    </div> -->
+                    <?php foreach($pages->listed()->not('home') as $page) : ?>
+                        <figure class="page-nav-item">
+                            <?php if($item = $page->cover()->toFile()) : ?>
+                                <a href="<?= $page->url() ?>">
+                                    <img src="<?= $item->url() ?>" alt="<?= $item->altTag() ?>">
+                                    <figcaption><?= $page->title() ?></figcaption>
+                                </a>
+                            <?php endif ?>
+                        </figure>
+                    <?php endforeach ?>
                 </div>
             </nav>
             <a href="<?= $page->url($href) ?>" hreflang="<?php echo $href ?>" class="lang-switcher icon-wrapper">

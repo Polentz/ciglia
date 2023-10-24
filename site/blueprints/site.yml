@@ -2,13 +2,43 @@ title: Site
 
 tabs:
   home:
-    label: Pages
-    icon: star
-    sections:
-      pages:
-        type: pages
+    label: MAIN
+    icon: grid-full
+    columns:
+      main:
+        width: 3/4
+        sections:
+          pages:
+            type: pages
+      sidebar:
+        width: 1/4
+        sections:
+          global:
+            type: fields
+            fields:
+              contact:
+                label: Contatti
+                type: email
+              # credits:
+              #   label: Crediti
+              #   type: writer
+              #   marks:
+              #     - italic
+              #     - link
+              #     - email
+              #   nodes: false
+              # partners:
+              #   label: Loghi
+              #   type: files
+              #   multiple: true
+              #   sortable: true
+              #   image:
+              #     icon: true
+              #     ratio: 1/1
+              #     back: white
+              #     cover: true
   media:
-    label: Media Library
+    label: MEDIA LIBRARY
     icon: star
     sections:
       library:
@@ -26,26 +56,42 @@ tabs:
               ratio: 1/1
               back: white
               cover: true
-  menu:
-    label: MENU
-    icon: grid
-    sections:
-      drawings:
-        type: fields
-        fields:
-          drawings:
-            type: files
-            template: image
-            uploads: image
-            layout: cards
-            multiple: true
-            min: 4
-            max: 4
-            image:
-              icon: true
-              ratio: 1/1
-              back: white
-              cover: true
+  seo:
+    label: SEO
+    icon: circle
+    columns:
+      main:
+        width: 1/2
+        sections:
+          seocontent:
+            type: fields
+            fields:
+              description:
+                label: Descrizione
+                type: textarea
+                buttons: false
+              keywords:
+                label: Keywords
+                type: tags         
+      image:
+        width: 1/2
+        sections:
+          image:
+            type: fields
+            fields:
+              ogimage:
+                label: Immagine di copertina
+                type: files
+                template: image
+                uploads: image
+                layout: cards
+                size: huge
+                multiple: false
+                image:
+                  back: "#000"
+                  icon: false
+                  ratio: 6/3
+                  cover: true
 
 
 

@@ -11,7 +11,7 @@
             <?= $page->blocks()->toBlocks() ?>
         </div>
         <?php if ($page->partners()->isNotEmpty()) : ?>
-            <div class="column-block">
+            <div id="partners" class="column-block">
                 <?php foreach($page->partners()->toFiles() as $logo) : ?>
                     <figure class="logo-wrapper">
                         <img src="<?= $logo->url() ?>" alt="<?= $logo->alt() ?>">

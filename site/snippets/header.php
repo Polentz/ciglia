@@ -82,12 +82,14 @@
                             <path d="M9.66667 11.6667L12.3333 9M12.3333 9L9.66667 6.33333M12.3333 9L5.66667 9M9 1C13.4183 1 17 4.58172 17 9C17 13.4183 13.4183 17 9 17C4.58172 17 1 13.4183 1 9C1 4.58172 4.58172 1 9 1Z" />
                         </svg>
                     </li>
-                    <li class="site-nav-item icon-wrapper">
-                        <a href="/#contact">Contact</a>
-                        <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9.66667 11.6667L12.3333 9M12.3333 9L9.66667 6.33333M12.3333 9L5.66667 9M9 1C13.4183 1 17 4.58172 17 9C17 13.4183 13.4183 17 9 17C4.58172 17 1 13.4183 1 9C1 4.58172 4.58172 1 9 1Z" />
-                        </svg>
-                    </li>
+                    <?php if ($site->contact()->isNotEmpty()) : ?>
+                        <li class="site-nav-item icon-wrapper">
+                            <a href="/#contact">Contact</a>
+                            <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.66667 11.6667L12.3333 9M12.3333 9L9.66667 6.33333M12.3333 9L5.66667 9M9 1C13.4183 1 17 4.58172 17 9C17 13.4183 13.4183 17 9 17C4.58172 17 1 13.4183 1 9C1 4.58172 4.58172 1 9 1Z" />
+                            </svg>
+                        </li>
+                    <?php endif ?>
                 </ul>
                 <div class="page-nav">
                     <?php foreach($pages->listed()->not('home') as $page) : ?>

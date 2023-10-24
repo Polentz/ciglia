@@ -249,7 +249,7 @@ a {
     margin-top: 2rem;
 }
 
-.column-block:nth-child(2) {
+#partners {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 2rem;
@@ -300,141 +300,8 @@ a {
     display: none;
 }
 
-/* audio */
-
-.audio-player {
-    height: auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    gap: 1rem;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    border-top: dashed 1px var(--color-txt);
-    border-bottom: dashed 1px var(--color-txt);
-    padding: 1rem 0;
-}
-
-.audio-player svg {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    width: 1.2rem;
-    stroke: var(--color-txt);
-    stroke-width: 1.5px;
-    -webkit-transition: all .5s ease;
-    -o-transition: all .5s ease;
-    transition: all .5s ease;
-}
-
-.play-btn {
-    position: relative;
-    cursor: pointer;
-}
-
-.play-icon.toggle-play {
-    opacity: 0;
-}
-
-.pause-icon {
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.pause-icon.toggle-play {
-    opacity: 1;
-}
-
-.stop-icon {
-    opacity: 0;
-    -webkit-transition: opacity .5s ease;
-    -o-transition: opacity .5s ease;
-    transition: opacity .5s ease;
-}
-
-.stop-icon.toggle-play {
-    opacity: 1;
-    cursor: pointer;
-}
-
-.audio-time {
-    width: 144px;
-    white-space: nowrap;
-    font-family: "Alte Haas Grotesk";
-    font-style: normal;
-    font-weight: 400;
-    font-size: .9rem;
-    text-align: center;
-}
-
-.audio-time span {
-    white-space: nowrap;
-}
-
-input.seek-slider {
-    position: relative;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    outline: solid 1px black;
-    background-color: transparent;
-}
-
-input.seek-slider::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 8px;
-    cursor: pointer;
-}
-
-input.seek-slider::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: var(--seek-before-width);
-    height: 8px;
-    background-color: var(--color-txt);
-    opacity: 0.5;
-    cursor: pointer;
-}
-
-input.seek-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    height: 0;
-    width: 0;
-}
-
-.audio-volume {
-    position: relative;
-    cursor: pointer;
-}
-
-.volume-icon.toggle-volume {
-    opacity: 0;
-}
-
-.mute-icon {
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.mute-icon.toggle-volume {
-    opacity: 1;
+.audio-component {
+    display: none;
 }
 
 @media screen and (max-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {

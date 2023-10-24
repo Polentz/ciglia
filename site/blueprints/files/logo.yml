@@ -1,0 +1,17 @@
+title: Logo
+options:
+  preview: false
+
+accept: 
+  extension: jpg, png, jpeg
+  maxsize: 1258291
+
+fields:
+  caption:
+    width: 1/2
+    label: Didascalia
+    type: text
+  alt:
+    type: text
+    width: 1/2
+    label: Alt Tag

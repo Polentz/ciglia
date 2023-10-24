@@ -10,6 +10,9 @@ tabs:
         sections:
           pages:
             type: pages
+            template: 
+              - default
+              - home
       sidebar:
         width: 1/4
         sections:
@@ -19,24 +22,6 @@ tabs:
               contact:
                 label: Contatti
                 type: email
-              # credits:
-              #   label: Crediti
-              #   type: writer
-              #   marks:
-              #     - italic
-              #     - link
-              #     - email
-              #   nodes: false
-              # partners:
-              #   label: Loghi
-              #   type: files
-              #   multiple: true
-              #   sortable: true
-              #   image:
-              #     icon: true
-              #     ratio: 1/1
-              #     back: white
-              #     cover: true
   media:
     label: MEDIA LIBRARY
     icon: star

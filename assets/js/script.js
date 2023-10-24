@@ -5,6 +5,7 @@ const documentHeight = () => {
 
 const menuOpener = () => {
     const opener = document.getElementById("menu-opener");
+    const closerItems = document.querySelectorAll(".site-nav-item a");
     const menu = document.getElementById("menu");
     const menuContent = menu.querySelector(".menu-wrapper");
     const main = document.querySelector(".main");
@@ -17,6 +18,18 @@ const menuOpener = () => {
         setTimeout(() => {
             menuContent.classList.toggle("--open");
         }, 100);
+    });
+
+    closerItems.forEach(item => {
+        item.addEventListener("click", () => {
+            opener.classList.remove("--rotate");
+            menuContent.classList.remove("--open");
+            main.classList.remove("--disable");
+            body.classList.remove("--disable");
+            setTimeout(() => {
+                menu.classList.remove("--open");
+            }, 100);
+        })
     });
 };
 

@@ -1,0 +1,56 @@
+title: Default Page
+
+columns:
+  image:
+    width: 1/2
+    sections:
+      image:
+        type: fields
+        fields:
+          cover:
+            label: Immagine
+            type: files
+            layout: cards
+            size: huge
+            query: site.images
+            multiple: false
+            uploads: false
+            image:
+              icon: true
+              ratio: 1/1
+              back: white
+              cover: true
+  copy:
+    width: 1/2
+    sections: 
+      copy:
+        type: fields
+        fields:
+          blocks:
+            label: Testi
+            type: blocks
+            fieldsets:
+              - maintext
+              - title
+              - accordion
+          partners:
+            label: Loghi
+            type: files
+            uploads:
+              template: logo
+            multiple: true
+            sortable: true
+            image:
+              icon: true
+              ratio: 1/1
+              back: white
+              cover: true
+          credits:
+            label: Crediti
+            type: writer
+            marks:
+              - italic
+              - link
+              - email
+            nodes: false
+

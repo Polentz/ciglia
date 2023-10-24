@@ -94,8 +94,8 @@
                         <a href="<?= $page->url() ?>" class="page-nav-item">
                             <?php if($item = $page->cover()->toFile()) : ?>
                                 <figure>
-                                    <img src="<?= $item->url() ?>" alt="<?= $item->altTag() ?>">
-                                    <figcaption><?= $page->title() ?></figcaption>
+                                    <img src="<?= $item->url() ?>" alt="<?= $item->alt() ?>">
+                                    <!-- <figcaption><?= $page->title() ?></figcaption> -->
                                 </figure>
                             <?php endif ?>
                         </a>

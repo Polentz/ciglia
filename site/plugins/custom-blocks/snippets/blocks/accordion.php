@@ -1,10 +1,3 @@
-<!-- <div class="accordion">
-    <details>
-        <summary class="column-title"><?= $block->header() ?></summary>
-        <?= $block->body()->kt() ?>
-    </details>
-</div> -->
-
 <div class="accordion">
     <h3 class="accordion-header column-title icon-wrapper"><?= $block->header() ?>
         <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">

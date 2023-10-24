@@ -1,0 +1,16 @@
+title: Imagine
+options:
+  preview: false
+
+accept: 
+  extension: jpg, png, jpeg
+
+fields:
+  caption:
+    type: text
+    width: 1/2
+    label: Didascalia
+  alt:
+    type: text
+    width: 1/2
+    label: Alt Tag

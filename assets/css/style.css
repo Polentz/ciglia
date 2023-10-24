@@ -106,17 +106,18 @@ em {
     left: 50%;
     transform: translateX(-50%);
     z-index: 9;
+    transition: transform .5s ease;
 }
 
 .menu-opener svg {
     width: 2rem;
     height: 2rem;
+    position: relative;
     fill: var(--color);
-    transition: transform .5s ease;
 }
 
-.menu-opener.--rotate svg {
-    transform: rotate(45deg);
+.menu-opener.--rotate {
+    transform: translateX(-50%) rotate(45deg);
 }
 
 .menu {

@@ -91,14 +91,14 @@
                 </ul>
                 <div class="page-nav">
                     <?php foreach($pages->listed()->not('home') as $page) : ?>
-                        <figure class="page-nav-item">
+                        <a href="<?= $page->url() ?>" class="page-nav-item">
                             <?php if($item = $page->cover()->toFile()) : ?>
-                                <a href="<?= $page->url() ?>">
+                                <figure>
                                     <img src="<?= $item->url() ?>" alt="<?= $item->altTag() ?>">
                                     <figcaption><?= $page->title() ?></figcaption>
-                                </a>
+                                </figure>
                             <?php endif ?>
-                        </figure>
+                        </a>
                     <?php endforeach ?>
                 </div>
             </nav>

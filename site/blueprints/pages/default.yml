@@ -30,5 +30,7 @@ columns:
             label: Testi
             type: blocks
             fieldsets:
-              - text
+              - maintext
+              - title
+              - accordion
 

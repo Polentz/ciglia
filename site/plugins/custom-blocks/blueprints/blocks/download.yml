@@ -1,0 +1,14 @@
+name: Pulsante per download file
+icon: attachment
+wysiwyg: true
+fields:
+  text:
+    label: Testo del pulsante
+    type: text
+  file:
+    type: files
+    label: Documento in download
+    template: document
+    uploads: document
+    info: false
+    sortable: true

@@ -1,0 +1,14 @@
+name: Testo
+icon: text
+wysiwyg: true
+fields:
+  maintext:
+    label: Testo
+    type: writer
+    marks:
+      - bold
+      - italic
+      - underline
+      - link
+      - email
+    nodes: false

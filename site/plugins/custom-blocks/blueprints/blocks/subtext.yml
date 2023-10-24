@@ -1,0 +1,14 @@
+name: Testo secondario
+icon: text
+wysiwyg: true
+fields:
+  subtext:
+    label: Testo
+    type: writer
+    marks:
+      - bold
+      - italic
+      - underline
+      - link
+      - email
+    nodes: false

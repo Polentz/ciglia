@@ -7,17 +7,17 @@ return [
     'panel' => [
         'css' => 'assets/css/panel.css'
     ],
-    // 'blocks' => [
-    //     'fieldsets' => [
-    //       'custom' => [
-    //         'label' => 'Select a block type:',
-    //         'type' => 'group',
-    //         'fieldsets' => [
-    //           'maintext',
-    //           'subtext',
-    //           'buttons',
-    //           ]
-    //         ],
-    //     ]
-    //         ],
+    'blocks' => [
+        'fieldsets' => [
+          'custom' => [
+            'label' => 'Select a block type:',
+            'type' => 'group',
+            'fieldsets' => [
+              'maintext',
+              'titletext',
+              'accordion',
+              ]
+            ],
+        ]
+            ],
 ];

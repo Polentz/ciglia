@@ -48,7 +48,7 @@ html {
     --title-font-size: 1.2rem;
     --subtitle-font-family: "Bricolage Grotesque", sans-serif;
     --subtitle-font-size: 1rem;
-    --main-margin: 7.5rem;
+    --main-margin: 6rem;
     --column-margin: 2.5rem;
 }
 
@@ -81,6 +81,7 @@ strong {
     position: fixed;
     top: var(--main-margin);
     left: var(--main-margin);
+    z-index: 7;
 }
 
 .header,
@@ -150,6 +151,8 @@ strong {
 .lang-switcher {
     bottom: var(--main-margin);
     left: var(--main-margin);
+    transform-origin: center;
+    transform: rotate(180deg);
 }
 
 .page-label {
@@ -166,6 +169,8 @@ strong {
     width: 100%;
     height: auto;
     display: flex;
+    position: relative;
+    z-index: 1;
 }
 
 .column {
@@ -174,9 +179,20 @@ strong {
 }
 
 .column:first-child {
+    mix-blend-mode: multiply;
+}
+
+.column div {
     height: 50vh;
+    background-color: aquamarine;
+
+    width: 100%;
     position: sticky;
     top: var(--main-margin);
-    background-color: aquamarine;
-    z-index: 1;
+}
+
+.column:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }

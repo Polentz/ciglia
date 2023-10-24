@@ -1,0 +1,9 @@
+name: Accordion
+icon: bolt
+fields:
+  blocks:
+    label: Accordion
+    type: blocks
+    fieldsets:
+      - accordionheader
+      - accordiontext

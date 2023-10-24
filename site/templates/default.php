@@ -2,10 +2,9 @@
 
 <main class="main">
     <div class="column">
-        <!-- <?php foreach($site->library()->toFiles() as $image) : ?>
+        <?php if ($image = $page->cover()->toFile()) : ?>
             <img src="<?= $image->url() ?>" alt="<?= $image->altTag() ?>">
-        <?php endforeach ?> -->
-        <div></div>
+        <?php endif ?>
     </div>
     <div class="column">
         <?= $page->blocks()->toBlocks() ?>

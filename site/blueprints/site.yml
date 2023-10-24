@@ -23,7 +23,7 @@ tabs:
             multiple: true
             image:
               icon: true
-              ratio: 4/3
+              ratio: 1/1
               back: white
               cover: true
   menu:
@@ -43,7 +43,7 @@ tabs:
             max: 4
             image:
               icon: true
-              ratio: 4/3
+              ratio: 1/1
               back: white
               cover: true
 

@@ -10,11 +10,11 @@ return [
     'blocks' => [
         'fieldsets' => [
           'custom' => [
-            'label' => 'Select a block type:',
+            'label' => 'Selezione un blocco:',
             'type' => 'group',
             'fieldsets' => [
               'maintext',
-              'titletext',
+              'title',
               'accordion',
               ]
             ],

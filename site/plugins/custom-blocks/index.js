@@ -18,78 +18,45 @@ panel.plugin("ciglia/blocks", {
         </div>
       `
     },
-    subtext: {
+    title: {
       computed: {
         placeholder() {
-          return "Testo secondario ...";
-        }
-      },
-      template: `
-        <div>
-          <p>
-            <k-writer
-              v-bind="field('subtext')"
-              :value="content.subtext"
-              @input="update({ subtext: $event })">
-            </k-writer>
-          </p>
-        </div>
-      `
-    },
-    buttons: {
-      template: `
-        <div class="buttons">
-          <div v-for="item in content.blocks" class="button-wrapper">
-            <ul class="button">
-              <li v-html="item.content.text"></li>
-            </ul>
-          </div>
-        </div> 
-      `
-    },
-    link: {
-      computed: {
-        placeholder() {
-          return "Testo del pulsante ...";
-        }
-      },
-      template: `
-      <input
-        type="text"
-        :placeholder="placeholder"
-        :value="content.text"
-        @input="update({ text: $event.target.value })"
-      />
-      `
-    },
-    download: {
-      computed: {
-        placeholder() {
-          return "Testo del pulsante ...";
+          return "Titolo ...";
         }
       },
       template: `
         <input
           type="text"
           :placeholder="placeholder"
-          :value="content.text"
-          @input="update({ text: $event.target.value })"
+          :value="content.title"
+          @input="update({ title: $event.target.value })"
         />
       `
     },
-    special: {
+    accordion: {
       computed: {
         placeholder() {
-          return "Testo del pulsante ...";
+          return "Nome esercizio ...";
         }
       },
       template: `
-      <input
-        type="text"
-        :placeholder="placeholder"
-        :value="content.text"
-        @input="update({ text: $event.target.value })"
-      />
+      <div class="accordion">
+        <input
+          type="text"
+          :placeholder="placeholder"
+          :value="content.header"
+          @input="update({ text: $event.target.value })"
+        />
+        <div class="accordion-content">
+          <p>
+            <k-writer
+              v-bind="field('body')"
+              :value="content.body"
+              @input="update({ body: $event })">
+            </k-writer>
+          </p>
+        </div>
+      </div>
       `
     },
   }

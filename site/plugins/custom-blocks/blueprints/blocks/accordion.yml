@@ -1,9 +1,15 @@
-name: Accordion
+name: Esercizio
 icon: bolt
 fields:
-  blocks:
-    label: Accordion
-    type: blocks
-    fieldsets:
-      - accordionheader
-      - accordiontext
+  header:
+    label: Header
+    type: text
+  body:
+    label: Content
+    type: writer
+    marks:
+      - bold
+      - italic
+      - link
+      - email
+    nodes: false

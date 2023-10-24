@@ -1,14 +1,13 @@
-name: Testo secondario
+name: Titolo
 icon: text
 wysiwyg: true
 fields:
-  subtext:
-    label: Testo
+  title:
+    label: Titolo
     type: writer
     marks:
       - bold
       - italic
-      - underline
       - link
       - email
     nodes: false

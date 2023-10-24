@@ -1,67 +1,32 @@
-.k-block-container-type-button,
-.k-block-type-download,
-.k-block-type-link,
-.k-block-type-special {
-    font-family: "Ortica Angular", serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: .9rem;
-    text-indent: 2rem;
-    position: relative;
-}
-
-.k-block-type-download::after,
-.k-block-type-link::after,
-.k-block-type-special::after {
-    content: "";
-    width: 6px;
-    height: 6px;
-    background-color: black;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    border-radius: 50%;
+.k-block-type-title,
+.k-block-type-accordion {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 1rem;
+    font-weight: 800;
 }
 
 
-.k-block-type-download input,
-.k-block-type-link input,
-.k-block-type-special input {
+.k-block-type-title input,
+.k-block-type-accordion input {
     border: none;
     font: inherit;
 }
 
-.k-block-type-download input:focus,
-.k-block-type-link input:focus,
-.k-block-type-special input:focus {
+.k-block-type-title input:focus,
+.k-block-type-accordion input:focus {
     outline: 0;
     border-color: black;
 }
 
-.k-block-type-maintext,
-.k-block-type-subtext {
-    line-height: 140%;
+.k-block-type-accordion input {
+    margin-bottom: .75rem;
 }
 
-.k-block-type-subtext {
-    font-family: "Ortica Linear", serif;
+.k-block-type-accordion .accordion-content,
+.k-block-type-maintext {
+    font-family: "Basier Circle", sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: .95rem;
-}
-
-.buttons {
-    margin: 0 1rem;
-}
-
-.button {
-    font-family: "Ortica Angular", serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: .9rem;
-}
-
-.button li {
-    list-style: inside;
+    font-size: 1rem;
+    line-height: 1.4;
 }

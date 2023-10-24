@@ -8,7 +8,6 @@ fields:
     marks:
       - bold
       - italic
-      - underline
       - link
       - email
     nodes: false

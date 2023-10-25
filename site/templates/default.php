@@ -1,4 +1,4 @@
-<?= snippet('header') ?>
+<?= snippet('header', ['page' => $page]) ?>
 
 <main class="main">
     <div class="column">

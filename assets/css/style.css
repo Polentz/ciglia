@@ -161,6 +161,10 @@ a {
 .page-nav {
     width: 75%;
     height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
@@ -175,8 +179,8 @@ a {
 
 .page-nav-item img {
     width: 100%;
-    max-width: 250px;
-    max-height: 250px;
+    max-width: 300px;
+    max-height: 300px;
     object-fit: cover;
 }
 

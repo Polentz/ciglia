@@ -38,88 +38,94 @@ const audioPlayer = () => {
     const audioButton = document.querySelectorAll(".audio-button");
     const audioComponent = document.querySelector(".audio-component");
     const audioPlayer = audioComponent.querySelector(".audio-player");
-    const playButton = audioComponent.querySelector(".play-btn");
     const audioPlayerTitle = audioComponent.querySelector(".audio-title");
+    const currentTimeContainer = audioComponent.querySelector(".audio-progress");
     const seekSlider = audioComponent.querySelector(".seek-slider");
+    const playButton = audioComponent.querySelector(".play-btn");
+    const volumeButton = audioComponent.querySelector(".audio-volume");
     const playIcon = audioComponent.querySelector(".play-icon");
     const pauseIcon = audioComponent.querySelector(".pause-icon");
     const volumeIcon = audioComponent.querySelector(".volume-icon");
     const muteIcon = audioComponent.querySelector(".mute-icon");
-    const currentTimeContainer = audioComponent.querySelector(".audio-progress");
-    const volumeContainer = audioComponent.querySelector(".audio-volume");
     let raf = null;
 
+    const calculateTime = (sec) => {
+        let minutes = Math.floor(sec / 60);
+        let seconds = Math.floor(sec - minutes * 60);
+        if (seconds < 10) {
+            seconds = `0${seconds}`;
+        }
+        return `${minutes}:${seconds}`;
+    };
+
+    const whilePlaying = (audio) => {
+        seekSlider.value = Math.floor(audio.currentTime);
+        currentTimeContainer.textContent = calculateTime(seekSlider.value);
+        audioPlayer.style.setProperty("--seek-before-width", `${seekSlider.value / seekSlider.max * 100}%`);
+        raf = requestAnimationFrame(() => whilePlaying(audio));
+    };
+
+    const playAudio = (audio) => {
+        if (audio.paused) {
+            audio.play();
+            requestAnimationFrame(() => whilePlaying(audio));
+        } else {
+            audio.pause();
+        };
+        playIcon.classList.toggle("--toggle-play");
+        pauseIcon.classList.toggle("--toggle-play");
+    };
+
+    const stopAudio = (audio) => {
+        audio.pause();
+        audio.currentTime = 0;
+        playIcon.classList.remove("--toggle-play");
+        pauseIcon.classList.remove("--toggle-play");
+        cancelAnimationFrame(raf);
+    };
+
+    const controlVolume = (audio) => {
+        if (audio.volume > 0) {
+            audio.volume = 0;
+            volumeIcon.classList.add("--toggle-volume");
+            muteIcon.classList.add("--toggle-volume");
+        } else {
+            audio.volume = 1;
+            volumeIcon.classList.remove("--toggle-volume");
+            muteIcon.classList.remove("--toggle-volume");
+        };
+    };
+
     audioButton.forEach(button => {
-        const audio = button.querySelector("audio");
-        const audioName = button.querySelector("span").innerHTML;
-        const audioSource = audio.src;
         button.addEventListener("click", () => {
-            audioComponent.querySelector("audio").src = audioSource;
-            audioPlayerTitle.innerHTML = audioName;
-            audioComponent.classList.add("--display");
-            setTimeout(() => {
-                audioPlayer.classList.add("--opacity");
-            }, 100);
+            const audioFile = button.querySelector("audio");
 
-            const whilePlaying = () => {
-                seekSlider.value = Math.floor(audio.currentTime);
-                currentTimeContainer.textContent = calculateTime(seekSlider.value);
-                audioPlayer.style.setProperty("--seek-before-width", `${seekSlider.value / seekSlider.max * 100}%`);
-                raf = requestAnimationFrame(whilePlaying);
-            };
-
-            const playAudio = () => {
-                if (audio.paused) {
-                    audio.play();
-                    requestAnimationFrame(whilePlaying);
-                } else {
-                    audio.pause();
-                    cancelAnimationFrame(raf);
-                };
-                playIcon.classList.toggle("--toggle-play");
-                pauseIcon.classList.toggle("--toggle-play");
-            };
-
-            const stopAudio = () => {
-                audio.pause();
-                audio.currentTime = 0;
-                playIcon.classList.remove("--toggle-play");
-                pauseIcon.classList.remove("--toggle-play");
-            };
-            stopAudio();
-            playAudio();
-
-            playButton.addEventListener("click", () => {
-                playAudio();
+            allAudioElements.forEach(audio => {
+                stopAudio(audio);
             });
 
-            audio.addEventListener("timeupdate", () => {
-                if (audio.duration === audio.currentTime) {
-                    stopAudio();
+            audioPlayerTitle.innerHTML = button.querySelector("span").innerHTML;
+            if (!audioComponent.classList.contains("--display")) {
+                audioComponent.classList.add("--display");
+                setTimeout(() => {
+                    audioPlayer.classList.add("--opacity");
+                }, 100);
+            };
+
+            playButton.onclick = () => playAudio(audioFile);
+
+            volumeButton.onclick = () => controlVolume(audioFile);
+
+            playAudio(audioFile);
+
+            audioFile.addEventListener("timeupdate", () => {
+                if (audioFile.duration === audioFile.currentTime) {
+                    stopAudio(audioFile);
                     audioPlayer.classList.remove("--opacity");
-                    setTimeout(() => {
-                        audio.remove;
-                        audioPlayerTitle.innerHTML = "";
-                        audioComponent.classList.remove("--display");
-                    }, 1000);
+                    audioPlayerTitle.innerHTML = "";
+                    audioComponent.classList.remove("--display");
                 };
             });
-
-            volumeContainer.addEventListener("click", () => {
-                controlVolume();
-            });
-
-            const controlVolume = () => {
-                if (audio.volume > 0) {
-                    audio.volume = 0;
-                    volumeIcon.classList.add("--toggle-volume");
-                    muteIcon.classList.add("--toggle-volume");
-                } else {
-                    audio.volume = 1;
-                    volumeIcon.classList.remove("--toggle-volume");
-                    muteIcon.classList.remove("--toggle-volume");
-                }
-            }
 
             const showRangeProgress = (rangeInput) => {
                 audioPlayer.style.setProperty("--seek-before-width", rangeInput.value / rangeInput.max * 100 + "%");
@@ -129,38 +135,29 @@ const audioPlayer = () => {
                 showRangeProgress(e.target);
             });
 
-            const calculateTime = (sec) => {
-                let minutes = Math.floor(sec / 60);
-                let seconds = Math.floor(sec - minutes * 60);
-                if (seconds < 10) {
-                    seconds = `0${seconds}`;
-                }
-                return `${minutes}:${seconds}`;
-            };
-
             const setSliderMax = () => {
-                seekSlider.max = Math.floor(audio.duration);
+                seekSlider.max = Math.floor(audioFile.duration);
             };
 
-            if (audio.readyState > 0) {
+            if (audioFile.readyState > 0) {
                 setSliderMax();
             };
 
-            audio.addEventListener("playing", () => {
+            audioFile.addEventListener("playing", () => {
                 setSliderMax();
             });
 
             seekSlider.addEventListener("input", () => {
                 currentTimeContainer.textContent = calculateTime(seekSlider.value);
-                if (!audio.paused) {
+                if (!audioFile.paused) {
                     cancelAnimationFrame(raf);
                 };
             });
 
             seekSlider.addEventListener("change", () => {
-                audio.currentTime = seekSlider.value;
-                if (!audio.paused) {
-                    requestAnimationFrame(whilePlaying);
+                audioFile.currentTime = seekSlider.value;
+                if (!audioFile.paused) {
+                    requestAnimationFrame(() => whilePlaying(audioFile));
                 };
             });
         });

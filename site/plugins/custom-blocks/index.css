@@ -1,19 +1,21 @@
 .k-block-type-title,
-.k-block-type-accordion {
+.k-block-type-accordion,
+.k-block-type-audiobutton {
     font-family: "Bricolage Grotesque", sans-serif;
     font-size: 1rem;
     font-weight: 800;
 }
 
-
 .k-block-type-title input,
-.k-block-type-accordion input {
+.k-block-type-accordion input,
+.k-block-type-audiobutton input {
     border: none;
     font: inherit;
 }
 
 .k-block-type-title input:focus,
-.k-block-type-accordion input:focus {
+.k-block-type-accordion input:focus,
+.k-block-type-audiobutton input:focus {
     outline: 0;
     border-color: black;
 }

@@ -1,0 +1,12 @@
+name: Ascolto
+icon: bolt
+fields:
+  title:
+    label: Testo
+    type: text
+  audio:
+    label: Audio file
+    type: files
+    template: audio
+    uploads: audio
+    multiple: false

@@ -16,6 +16,7 @@ return [
               'maintext',
               'title',
               'accordion',
+              'audiobutton',
               ]
             ],
         ]

@@ -1,3 +1,11 @@
+<?php
+    if ($kirby->language()->code() == 'it') {
+        $contactString = 'Contatti';
+    } else if ($kirby->language()->code() == 'en') {
+        $contactString = 'Contact';
+    } 
+?>
+
 <?= snippet('header', ['page' => $page]) ?>
 
 <main class="main">
@@ -29,7 +37,7 @@
         <?php endif ?>
         <?php if ($site->contact()->isNotEmpty()) : ?>
             <div id="contact" class="column-block">
-                <h3 class="column-title">Contatti</h3>
+                <h3 class="column-title"><?= $contactString ?></h3>
                 <a href="mailto:<?= $site->contact() ?>"><?= $site->contact() ?></a>
             </div>
         <?php endif ?>

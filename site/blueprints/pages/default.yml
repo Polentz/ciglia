@@ -33,4 +33,5 @@ columns:
               - maintext
               - title
               - accordion
+              - audiobutton
 

@@ -59,5 +59,20 @@ panel.plugin("ciglia/blocks", {
       </div>
       `
     },
+    audiobutton: {
+      computed: {
+        placeholder() {
+          return "Ascolto ...";
+        }
+      },
+      template: `
+        <input
+          type="text"
+          :placeholder="placeholder"
+          :value="content.title"
+          @input="update({ title: $event.target.value })"
+        />
+      `
+    },
   }
 });

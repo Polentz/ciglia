@@ -33,6 +33,46 @@ const menuOpener = () => {
     });
 };
 
+const accordion = () => {
+    const accordions = document.querySelectorAll(".accordion");
+    const accordionsContent = document.querySelectorAll(".accordion-content");
+    const accordionsUi = document.querySelectorAll(".accordion svg");
+    accordions.forEach(accordion => {
+        const opener = accordion.querySelector(".accordion-header");
+        opener.addEventListener("click", () => {
+            // accordionsContent.forEach(content => {
+            //     content.classList.remove("--display");
+            // });
+            // accordionsUi.forEach(openerUi => {
+            //     openerUi.classList.remove("--rotate");
+            // });
+            if (opener.parentNode === accordion) {
+                const content = accordion.querySelector(".accordion-content");
+                const openerUi = opener.querySelector("svg");
+                if (content.classList.contains("--display")) {
+                    content.classList.remove("--display");
+                } else {
+                    content.classList.add("--display");
+                };
+
+                if (openerUi.classList.contains("--rotate")) {
+                    openerUi.classList.remove("--rotate");
+                } else {
+                    openerUi.classList.add("--rotate");
+                };
+            };
+            if (opener.parentNode != accordion) {
+                accordionsContent.forEach(content => {
+                    content.classList.remove("--display");
+                });
+                accordionsUi.forEach(openerUi => {
+                    openerUi.classList.remove("--rotate");
+                });
+            };
+        });
+    });
+};
+
 const audioPlayer = () => {
     const allAudioElements = document.querySelectorAll("audio");
     const audioButton = document.querySelectorAll(".audio-button");
@@ -109,6 +149,8 @@ const audioPlayer = () => {
                 audioComponent.classList.add("--display");
                 setTimeout(() => {
                     audioPlayer.classList.add("--opacity");
+                    const doc = document.documentElement;
+                    doc.style.setProperty("--margin-bottom", `6.5rem`);
                 }, 100);
             };
 
@@ -124,6 +166,8 @@ const audioPlayer = () => {
                     audioPlayer.classList.remove("--opacity");
                     audioPlayerTitle.innerHTML = "";
                     audioComponent.classList.remove("--display");
+                    const doc = document.documentElement;
+                    doc.style.setProperty("--margin-bottom", `1.5rem`);
                     volumeIcon.classList.remove("--toggle-volume");
                     muteIcon.classList.remove("--toggle-volume");
                     audioFile.volume = 1;
@@ -163,6 +207,15 @@ const audioPlayer = () => {
                     requestAnimationFrame(() => whilePlaying(audioFile));
                 };
             });
+        });
+    });
+};
+
+const scrollToTop = () => {
+    const scroller = document.querySelector(".footer svg");
+    scroller.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
         });
     });
 };

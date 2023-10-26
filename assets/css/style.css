@@ -301,7 +301,6 @@ a {
 
 .accordion-header {
     width: fit-content;
-    cursor: pointer;
 }
 
 .accordion-header svg {
@@ -442,6 +441,10 @@ input.seek-slider::-webkit-slider-thumb {
     opacity: 1;
 }
 
+.footer {
+    display: none;
+}
+
 @media screen and (max-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     :root {
         --header-font-size: 1.5rem;
@@ -449,23 +452,32 @@ input.seek-slider::-webkit-slider-thumb {
         --title-font-size: 1rem;
         --subtitle-font-size: .625rem;
         --main-margin: 1.5rem .75rem;
-        --margin-left-right: .75rem;
-        --margin-top-bottom: 1.5rem;
+        --margin-top: 1.5rem;
+        --margin-right: .75rem;
+        --margin-bottom: 1.5rem;
+        --margin-left: .75rem;
         --column-margin: 2rem;
+    }
+
+    body {
+        margin-top: var(--margin-top);
+        margin-right: var(--margin-right);
+        margin-bottom: var(--margin-bottom);
+        margin-left: var(--margin-left);
     }
 
     .header {
         position: absolute;
-        bottom: var(--margin-top-bottom);
-        right: var(--margin-left-right);
+        bottom: var(--margin-bottom);
+        right: var(--margin-right);
         text-align: end;
         z-index: 1;
     }
 
     .site-nav {
         position: absolute;
-        bottom: var(--margin-top-bottom);
-        right: var(--margin-left-right);
+        bottom: var(--margin-bottom);
+        right: var(--margin-right);
     }
 
     .site-nav-item.icon-wrapper {
@@ -480,13 +492,13 @@ input.seek-slider::-webkit-slider-thumb {
     }
 
     .lang-switcher {
-        bottom: var(--margin-top-bottom);
-        left: var(--margin-left-right);
+        bottom: var(--margin-bottom);
+        left: var(--margin-left);
     }
 
     .page-label {
-        top: var(--margin-top-bottom);
-        right: var(--margin-left-right);
+        top: var(--margin-top);
+        right: var(--margin-right);
     }
 
     .main {
@@ -514,12 +526,25 @@ input.seek-slider::-webkit-slider-thumb {
         margin-top: 0;
     }
 
+    .accordion-header {
+        cursor: pointer;
+    }
+
     .accordion-header svg {
         display: block;
+        transition: transform .5s ease;
+    }
+
+    .accordion-header svg.--rotate {
+        transform: rotate(180deg);
     }
 
     .accordion-content {
         display: none;
+    }
+
+    .accordion-content.--display {
+        display: block;
     }
 
     .audio-component {
@@ -556,5 +581,18 @@ input.seek-slider::-webkit-slider-thumb {
 
     input.seek-slider::before {
         background-color: #fff;
+    }
+
+    .footer {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding-top: var(--margin-top);
+        cursor: pointer;
+    }
+
+    .footer svg {
+        width: 1.2rem;
+        height: 1.2rem;
     }
 }

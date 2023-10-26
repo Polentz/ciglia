@@ -22,7 +22,13 @@ columns:
               cover: true
   copy:
     width: 1/2
-    sections: 
+    sections:
+      subtitle:
+        type: fields
+        fields:
+          subtitle:
+            label: Numero pannello
+            type: text          
       copy:
         type: fields
         fields:

@@ -6,7 +6,7 @@
     } 
 ?>
 
-<?= snippet('header', ['page' => $page]) ?>
+<?= snippet('header') ?>
 
 <main class="main">
     <div class="column">
@@ -14,7 +14,7 @@
             <img src="<?= $image->crop(600, 600, 144)->url() ?>" alt="<?= $image->alt() ?>">
         <?php endif ?>
     </div>
-    <div class="column">
+    <div id="info" class="column">
         <div class="column-block">
             <?= $page->blocks()->toBlocks() ?>
         </div>

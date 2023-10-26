@@ -35,39 +35,23 @@ const menuOpener = () => {
 
 const accordion = () => {
     const accordions = document.querySelectorAll(".accordion");
-    const accordionsContent = document.querySelectorAll(".accordion-content");
-    const accordionsUi = document.querySelectorAll(".accordion svg");
     accordions.forEach(accordion => {
         const opener = accordion.querySelector(".accordion-header");
         opener.addEventListener("click", () => {
-            // accordionsContent.forEach(content => {
-            //     content.classList.remove("--display");
-            // });
-            // accordionsUi.forEach(openerUi => {
-            //     openerUi.classList.remove("--rotate");
-            // });
+            accordions.forEach(accordion => {
+                accordion.classList.add("--close");
+                accordion.classList.remove("--open");
+            });
             if (opener.parentNode === accordion) {
-                const content = accordion.querySelector(".accordion-content");
-                const openerUi = opener.querySelector("svg");
-                if (content.classList.contains("--display")) {
-                    content.classList.remove("--display");
-                } else {
-                    content.classList.add("--display");
+                if (accordion.classList.contains("--close")) {
+                    accordion.classList.remove("--close");
+                }
+                if (accordion.classList.contains("--open")) {
+                    accordion.classList.remove("--open");
+                }
+                if (!accordion.classList.contains("--open")) {
+                    accordion.classList.add("--open");
                 };
-
-                if (openerUi.classList.contains("--rotate")) {
-                    openerUi.classList.remove("--rotate");
-                } else {
-                    openerUi.classList.add("--rotate");
-                };
-            };
-            if (opener.parentNode != accordion) {
-                accordionsContent.forEach(content => {
-                    content.classList.remove("--display");
-                });
-                accordionsUi.forEach(openerUi => {
-                    openerUi.classList.remove("--rotate");
-                });
             };
         });
     });
@@ -150,7 +134,7 @@ const audioPlayer = () => {
                 setTimeout(() => {
                     audioPlayer.classList.add("--opacity");
                     const doc = document.documentElement;
-                    doc.style.setProperty("--margin-bottom", `6.5rem`);
+                    doc.style.setProperty("--margin-bottom", `calc(1.5rem + ${audioPlayer.offsetHeight}px)`);
                 }, 100);
             };
 
@@ -220,10 +204,32 @@ const scrollToTop = () => {
     });
 };
 
+const scrollIntoView = () => {
+    const mediaQuery = window.matchMedia("(max-width: 900px)");
+    const handleMediaQuery = (e) => {
+        const scroller = document.getElementById("scroller");
+        const element = document.getElementById("info");
+        const offset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - offset;
+        if (e.matches) {
+            scroller.addEventListener("click", () => {
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            });
+        };
+    };
+    mediaQuery.addListener(handleMediaQuery);
+    handleMediaQuery(mediaQuery);
+};
+
 window.addEventListener("load", () => {
     history.scrollRestoration = "manual";
     documentHeight();
     menuOpener();
+    scrollIntoView();
 });
 
 window.addEventListener("resize", () => {

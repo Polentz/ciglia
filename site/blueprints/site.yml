@@ -11,7 +11,7 @@ tabs:
           pages:
             type: pages
             template: 
-              - default
+              - page
               - home
       sidebar:
         width: 1/4

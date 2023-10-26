@@ -1,0 +1,13 @@
+Title: Suoni fissati
+
+----
+
+Cover: - file://JfO1lTi6eiRRJojx
+
+----
+
+Blocks: [{"content":{"maintext":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum enim facilisis gravida neque convallis a cras semper auctor. Senectus et netus et malesuada fames ac. Interdum velit euismod in pellentesque massa placerat duis. Ac odio tempor orci dapibus ultrices in iaculis nunc. Nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus. Sed tempus urna et pharetra pharetra massa massa ultricies. Mauris nunc congue nisi vitae suscipit tellus mauris. Netus et malesuada fames ac turpis egestas. Sed egestas egestas fringilla phasellus faucibus scelerisque eleifend. Euismod elementum nisi quis eleifend quam adipiscing.</p><p>Viverra tellus in hac habitasse. Varius duis at consectetur lorem donec massa sapien faucibus. Nibh mauris cursus mattis molestie a. Tortor consequat id porta nibh venenatis cras sed felis eget. Feugiat in fermentum posuere urna nec tincidunt praesent semper. In fermentum posuere urna nec tincidunt praesent semper feugiat nibh. Non sodales neque sodales ut etiam sit amet nisl purus. Enim nec dui nunc mattis. Vitae aliquet nec ullamcorper sit. Ut tortor pretium viverra suspendisse potenti nullam ac tortor vitae. In eu mi bibendum neque egestas congue quisque. Neque convallis a cras semper auctor neque vitae tempus quam. Amet consectetur adipiscing elit duis tristique.</p>"},"id":"4d038b8b-81f4-4bfe-93b9-a56d571ee94c","isHidden":false,"type":"maintext"},{"content":{"title":"Ascolto 1","audio":["file://yniqRdyIpr7mRXac"]},"id":"bf6b0f5a-c28f-43b0-a175-d5916ab4d155","isHidden":false,"type":"audiobutton"},{"content":{"title":"Ascolto 2","audio":["file://rar28imwGvPi28LW"]},"id":"63a36a31-5a2e-4265-801f-f1fe37d239e9","isHidden":false,"type":"audiobutton"},{"content":{"header":"Esercizio 1","body":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"},"id":"194a10f6-03a2-4e91-94c1-39d4663315e1","isHidden":false,"type":"accordion"}]
+
+----
+
+Uuid: nX5t5QdO0Yg1Rz6a

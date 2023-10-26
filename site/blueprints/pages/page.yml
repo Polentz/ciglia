@@ -1,4 +1,4 @@
-title: Homepage
+title: Page
 
 columns:
   image:
@@ -33,24 +33,5 @@ columns:
               - maintext
               - title
               - accordion
-          partners:
-            label: Loghi
-            type: files
-            uploads:
-              template: logo
-            multiple: true
-            sortable: true
-            image:
-              icon: true
-              ratio: 1/1
-              back: white
-              cover: true
-          credits:
-            label: Crediti
-            type: writer
-            marks:
-              - italic
-              - link
-              - email
-            nodes: false
+              - audiobutton
 

@@ -124,6 +124,9 @@ const audioPlayer = () => {
                     audioPlayer.classList.remove("--opacity");
                     audioPlayerTitle.innerHTML = "";
                     audioComponent.classList.remove("--display");
+                    volumeIcon.classList.remove("--toggle-volume");
+                    muteIcon.classList.remove("--toggle-volume");
+                    audioFile.volume = 1;
                 };
             });
 
@@ -165,9 +168,9 @@ const audioPlayer = () => {
 };
 
 window.addEventListener("load", () => {
+    history.scrollRestoration = "manual";
     documentHeight();
     menuOpener();
-    audioPlayer();
 });
 
 window.addEventListener("resize", () => {

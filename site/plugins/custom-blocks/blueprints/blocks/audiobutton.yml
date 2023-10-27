@@ -1,8 +1,8 @@
 name: Ascolto
-icon: bolt
+icon: play
 fields:
-  title:
-    label: Testo
+  audiotitle:
+    label: Titolo dell'ascolto
     type: text
   audio:
     label: Audio file

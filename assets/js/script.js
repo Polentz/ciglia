@@ -34,25 +34,12 @@ const menuOpener = () => {
 };
 
 const accordion = () => {
-    const accordions = document.querySelectorAll(".accordion");
-    accordions.forEach(accordion => {
-        const opener = accordion.querySelector(".accordion-header");
+    const accordion = document.querySelectorAll(".accordion");
+    accordion.forEach(item => {
+        const opener = item.querySelector(".accordion-header");
         opener.addEventListener("click", () => {
-            accordions.forEach(accordion => {
-                accordion.classList.add("--close");
-                accordion.classList.remove("--open");
-            });
-            if (opener.parentNode === accordion) {
-                if (accordion.classList.contains("--close")) {
-                    accordion.classList.remove("--close");
-                }
-                if (accordion.classList.contains("--open")) {
-                    accordion.classList.remove("--open");
-                }
-                if (!accordion.classList.contains("--open")) {
-                    accordion.classList.add("--open");
-                };
-            };
+            [...accordion].filter(i => i !== item).forEach(i => i.classList.remove("--open"));
+            item.classList.toggle("--open");
         });
     });
 };

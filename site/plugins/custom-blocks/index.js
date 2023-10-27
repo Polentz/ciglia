@@ -3,7 +3,7 @@ panel.plugin("ciglia/blocks", {
     maintext: {
       computed: {
         placeholder() {
-          return "Testo principale ...";
+          return "Testo ...";
         }
       },
       template: `
@@ -11,6 +11,7 @@ panel.plugin("ciglia/blocks", {
           <p>
             <k-writer
               v-bind="field('maintext')"
+              :placeholder="placeholder"
               :value="content.maintext"
               @input="update({ maintext: $event })">
             </k-writer>
@@ -36,7 +37,7 @@ panel.plugin("ciglia/blocks", {
     accordion: {
       computed: {
         placeholder() {
-          return "Nome esercizio ...";
+          return "Esercizio ...";
         }
       },
       template: `
@@ -45,7 +46,7 @@ panel.plugin("ciglia/blocks", {
           type="text"
           :placeholder="placeholder"
           :value="content.header"
-          @input="update({ text: $event.target.value })"
+          @input="update({ header: $event.target.value })"
         />
         <div class="accordion-content">
           <p>
@@ -69,8 +70,8 @@ panel.plugin("ciglia/blocks", {
         <input
           type="text"
           :placeholder="placeholder"
-          :value="content.title"
-          @input="update({ title: $event.target.value })"
+          :value="content.audiotitle"
+          @input="update({ audiotitle: $event.target.value })"
         />
       `
     },

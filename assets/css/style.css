@@ -313,6 +313,12 @@ a {
     display: none;
 }
 
+.accordion-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
 .audio-button {
     font-family: var(--title-font-family);
     font-size: var(--title-font-size);

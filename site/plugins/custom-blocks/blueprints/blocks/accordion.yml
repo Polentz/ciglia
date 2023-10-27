@@ -1,5 +1,5 @@
 name: Esercizio
-icon: bolt
+icon: bars
 fields:
   header:
     label: Header
@@ -13,3 +13,12 @@ fields:
       - link
       - email
     nodes: false
+  audiotitle:
+    label: Titolo dell'ascolto
+    type: text
+  audio:
+    label: Audio file
+    type: files
+    template: audio
+    uploads: audio
+    multiple: false   

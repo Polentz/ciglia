@@ -216,6 +216,7 @@ window.addEventListener("load", () => {
     history.scrollRestoration = "manual";
     documentHeight();
     menuOpener();
+    scrollToTop();
     scrollIntoView();
 });
 

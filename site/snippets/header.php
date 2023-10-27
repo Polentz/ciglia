@@ -50,7 +50,7 @@
     <link rel="shortcut icon" type="image/png" sizes="64x64" href="/assets/favicons/flavia-favicon-64.png">
     <link rel="shortcut icon" type="image/png" sizes="192x192" href="/assets/favicons/flavia-favicon-192.png">
     <link rel="shortcut icon" type="image/png" sizes="512x512" href="/assets/favicons/flavia-favicon-512.png"> -->
-    <link href="https://fonts.cdnfonts.com/css/bricolage-grotesque" rel="stylesheet">
+    <!-- <link href="https://fonts.cdnfonts.com/css/bricolage-grotesque" rel="stylesheet"> -->
     <?= css ([
         'assets/css/base.css',
         'assets/css/style.css',
@@ -95,14 +95,13 @@
                 </ul>
                 <div class="page-nav">
                     <?php foreach($pages->listed()->not('home') as $page) : ?>
-                        <a href="<?= $page->url() ?>" class="page-nav-item">
+                        <figure class="page-nav-item">
                             <?php if($item = $page->cover()->toFile()) : ?>
-                                <figure>
+                                <a href="<?= $page->url() ?>">
                                     <img src="<?= $item->url() ?>" alt="<?= $item->alt() ?>">
-                                    <!-- <figcaption><?= $page->title() ?></figcaption> -->
-                                </figure>
+                                </a>
                             <?php endif ?>
-                        </a>
+                        </figure>
                     <?php endforeach ?>
                 </div>
             </nav>

@@ -1,12 +1,12 @@
-Title: Utensili
+Title: Vertigine cognitiva
 
 ----
 
-Cover: - file://bDA7PtXzbTQYjuEw
+Cover: - file://0Y7q7Tzc81h7KVQh
 
 ----
 
-Subtitle: Pannello I
+Subtitle: Pannello IV
 
 ----
 
@@ -14,4 +14,4 @@ Blocks: [{"content":{"maintext":"<p>Lorem ipsum dolor sit amet, consectetur adip
 
 ----
 
-Uuid: 88UPQiG95yYNFsCc
+Uuid: wiN2N7HMWcUhyYiO

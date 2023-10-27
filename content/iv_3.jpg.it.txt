@@ -1,5 +1,0 @@
-Uuid: nKfjhVid3CfhyBG4
-
-----
-
-Template: image

@@ -1,2 +1,2 @@
-<?= snippet('header', ['page' => $page]) ?>
+<?= snippet('header') ?>
 <?= snippet('footer') ?>

@@ -12,9 +12,9 @@ columns:
             type: files
             layout: cards
             size: huge
-            query: site.images
+            template: image
+            uploads: image
             multiple: false
-            uploads: false
             image:
               icon: true
               ratio: 1/1

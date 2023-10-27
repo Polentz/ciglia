@@ -2,7 +2,7 @@ title: Site
 
 tabs:
   home:
-    label: MAIN
+    label: WEBSITE
     icon: grid-full
     columns:
       main:
@@ -13,6 +13,11 @@ tabs:
             template: 
               - page
               - home
+            image:
+              icon: true
+              ratio: 1/1
+              back: white
+              cover: true
       sidebar:
         width: 1/4
         sections:
@@ -22,25 +27,6 @@ tabs:
               contact:
                 label: Contatti
                 type: email
-  media:
-    label: MEDIA LIBRARY
-    icon: star
-    sections:
-      library:
-        type: fields
-        fields:
-          library:
-            label: All media
-            type: files
-            width: 1/1
-            template: image
-            uploads: image
-            multiple: true
-            image:
-              icon: true
-              ratio: 1/1
-              back: white
-              cover: true
   seo:
     label: SEO
     icon: circle
@@ -73,9 +59,9 @@ tabs:
                 size: huge
                 multiple: false
                 image:
-                  back: "#000"
-                  icon: false
-                  ratio: 6/3
+                  icon: true
+                  ratio: 1/1
+                  back: white
                   cover: true
 
 

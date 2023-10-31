@@ -46,11 +46,6 @@
         <meta name="twitter:image:alt" content="<?= $site->ogimage()->toFile()->alt() ?>">
     <?php endif ?>
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <!-- <link rel="shortcut icon" type="image/png" sizes="48x48" href="/assets/favicons/flavia-favicon-48.png">
-    <link rel="shortcut icon" type="image/png" sizes="64x64" href="/assets/favicons/flavia-favicon-64.png">
-    <link rel="shortcut icon" type="image/png" sizes="192x192" href="/assets/favicons/flavia-favicon-192.png">
-    <link rel="shortcut icon" type="image/png" sizes="512x512" href="/assets/favicons/flavia-favicon-512.png"> -->
-    <!-- <link href="https://fonts.cdnfonts.com/css/bricolage-grotesque" rel="stylesheet"> -->
     <?= css ([
         'assets/css/base.css',
         'assets/css/style.css',

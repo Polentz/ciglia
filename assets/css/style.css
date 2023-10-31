@@ -102,6 +102,7 @@ a {
     width: 1rem;
     height: 1rem;
     stroke: var(--color);
+    position: relative;
 }
 
 .header {
@@ -184,6 +185,14 @@ a {
     position: absolute;
     top: var(--main-margin);
     left: var(--main-margin);
+}
+
+.site-nav-item {
+    transition: gap .2s ease;
+}
+
+.site-nav-item:hover {
+    gap: 2.5rem;
 }
 
 .site-nav-item a {
@@ -292,35 +301,11 @@ a {
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     transform: rotate(180deg);
+    transition: gap .2s ease;
 }
 
-.lang-switcher::before {
-    content: "";
-    width: calc(100% + 16px);
-    height: calc(100% + 32px);
-    position: absolute;
-    top: -16px;
-    left: -8px;
-    border: solid 1px var(--color);
-    border-radius: 1.5rem;
-    pointer-events: none;
-    -webkit-transform-origin: 50% 50%;
-    -ms-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
-    -webkit-transform: scale3d(0, 0, 1);
-    transform: scale3d(0, 0, 1);
-    opacity: 0;
-    -webkit-transition: opacity .5s, -webkit-transform .1s;
-    transition: opacity .5s, -webkit-transform .1s;
-    -o-transition: opacity .5s, transform .1s;
-    transition: opacity .5s, transform .1s;
-    transition: opacity .5s, transform .1s, -webkit-transform .1s;
-}
-
-.lang-switcher:hover::before {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-    opacity: 1;
+.lang-switcher:hover {
+    gap: 2.5rem;
 }
 
 .page-label {
@@ -334,11 +319,41 @@ a {
     font-weight: var(--header-font-weight);
 }
 
-.lang-switcher p,
-.page-label p {
+.lang-switcher span,
+.page-label span {
     -webkit-writing-mode: vertical-lr;
     -ms-writing-mode: tb-lr;
     writing-mode: vertical-lr;
+}
+
+.lang-switcher span {
+    position: relative;
+}
+
+.lang-switcher span::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background: var(--color);
+    top: 0;
+    left: -12px;
+    pointer-events: none;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transform: scale3d(1, 0, 1);
+    transform: scale3d(1, 0, 1);
+    -webkit-transition: -webkit-transform .2s;
+    transition: -webkit-transform .2s;
+    -o-transition: transform .2s;
+    transition: transform .2s;
+    transition: transform .2s, -webkit-transform .2s;
+}
+
+.lang-switcher span:hover::before {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
 }
 
 .main {
@@ -471,41 +486,43 @@ a {
     font-family: var(--title-font-family);
     font-size: var(--title-font-size);
     font-weight: var(--header-font-weight);
-    position: relative;
     cursor: pointer;
+    transition: gap .2s ease;
 }
 
-.audio-button::before {
+.audio-button:hover {
+    gap: 2.5rem;
+}
+
+.audio-button span {
+    position: relative;
+    line-height: 1.2;
+}
+
+.audio-button span::before {
     content: "";
-    width: calc(100% + 24px);
-    height: calc(100% + 16px);
     position: absolute;
-    top: -8px;
-    left: -16px;
-    border: solid 1px var(--color);
-    border-radius: 1.5rem;
+    width: 100%;
+    height: 1px;
+    background: var(--color);
+    top: 95%;
+    left: 0;
     pointer-events: none;
     -webkit-transform-origin: 50% 50%;
     -ms-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
-    -webkit-transform: scale3d(0, 0, 1);
-    transform: scale3d(0, 0, 1);
-    opacity: 0;
-    -webkit-transition: opacity .5s, -webkit-transform .1s;
-    transition: opacity .5s, -webkit-transform .1s;
-    -o-transition: opacity .5s, transform .1s;
-    transition: opacity .5s, transform .1s;
-    transition: opacity .5s, transform .1s, -webkit-transform .1s;
+    -webkit-transform: scale3d(0, 1, 1);
+    transform: scale3d(0, 1, 1);
+    -webkit-transition: -webkit-transform .2s;
+    transition: -webkit-transform .2s;
+    -o-transition: transform .2s;
+    transition: transform .2s;
+    transition: transform .2s, -webkit-transform .2s;
 }
 
-.audio-button:hover::before {
+.audio-button span:hover::before {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
-    opacity: 1;
-}
-
-.audio-button span {
-    line-height: 1;
 }
 
 .audio-component {

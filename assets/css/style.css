@@ -296,11 +296,11 @@ a {
 
 .lang-switcher::before {
     content: "";
-    width: calc(100% + 1rem);
-    height: calc(100% + 2rem);
+    width: calc(100% + 16px);
+    height: calc(100% + 32px);
     position: absolute;
-    top: -1rem;
-    left: -.5rem;
+    top: -16px;
+    left: -8px;
     border: solid 1px var(--color);
     border-radius: 1.5rem;
     pointer-events: none;
@@ -477,11 +477,11 @@ a {
 
 .audio-button::before {
     content: "";
-    width: calc(100% + 2rem);
-    height: calc(100% + 1rem);
+    width: calc(100% + 24px);
+    height: calc(100% + 16px);
     position: absolute;
-    top: -.5rem;
-    left: -1rem;
+    top: -8px;
+    left: -16px;
     border: solid 1px var(--color);
     border-radius: 1.5rem;
     pointer-events: none;
@@ -502,6 +502,10 @@ a {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
     opacity: 1;
+}
+
+.audio-button span {
+    line-height: 1;
 }
 
 .audio-component {

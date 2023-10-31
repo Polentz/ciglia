@@ -1,12 +1,9 @@
 <?php
 
 return [
-    'debug'  => true,
+    'debug'  => false,
     'languages' => true,
     'smartypants' => true,
-    'panel' => [
-        'css' => 'assets/css/panel.css'
-    ],
     'blocks' => [
         'fieldsets' => [
           'custom' => [

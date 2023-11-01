@@ -1,4 +1,13 @@
 title: Homepage
+navigation:
+  status: 
+    - listed
+    - unlisted
+  template:
+    - home
+    - page
+options:
+  duplicate: false
 
 columns:
   image:
@@ -14,6 +23,7 @@ columns:
             size: huge
             template: image
             uploads: image
+            query: page.images.filterBy('template', 'image')
             multiple: false
             image:
               icon: true
@@ -36,8 +46,9 @@ columns:
           partners:
             label: Loghi
             type: files
-            uploads:
-              template: logo
+            uploads: logo
+            template: logo
+            query: page.images.filterBy('template', 'logo')
             multiple: true
             sortable: true
             image:

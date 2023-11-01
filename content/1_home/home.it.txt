@@ -1,4 +1,4 @@
-Title: Home
+Title: Homepage
 
 ----
 
@@ -15,10 +15,6 @@ Partners:
 ----
 
 Credits: 
-
-----
-
-Library: - file://JfO1lTi6eiRRJojx
 
 ----
 

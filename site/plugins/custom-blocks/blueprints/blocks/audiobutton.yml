@@ -9,4 +9,5 @@ fields:
     type: files
     template: audio
     uploads: audio
+    query: page.files.filterBy('template', 'audio')
     multiple: false

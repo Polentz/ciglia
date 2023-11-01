@@ -1,4 +1,13 @@
 title: Page
+navigation:
+  status: listed
+  template:
+    - home
+    - page
+options:
+  sort:
+    admin: true
+    editor: false
 
 columns:
   image:
@@ -14,6 +23,7 @@ columns:
             size: huge
             template: image
             uploads: image
+            query: page.images.filterBy('template', 'image')
             multiple: false
             image:
               icon: true
@@ -28,7 +38,8 @@ columns:
         fields:
           subtitle:
             label: Numero pannello
-            type: text          
+            type: text
+            width: 1/2        
       copy:
         type: fields
         fields:

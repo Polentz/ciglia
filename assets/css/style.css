@@ -243,6 +243,7 @@ a {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin: 0 auto;
+    overflow-y: scroll;
 }
 
 .page-nav-item {

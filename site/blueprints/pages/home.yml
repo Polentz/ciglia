@@ -42,7 +42,6 @@ columns:
             fieldsets:
               - maintext
               - title
-              - accordion
           partners:
             label: Loghi
             type: files

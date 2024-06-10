@@ -54,8 +54,10 @@
 </head>
 <body>
     <header class="header">
-        <h1><?= $site->title() ?></h1>
-        <h2>via della lana<br>e della seta</h2>
+        <a href="<?= $site->url() ?>">
+            <h1><?= $site->title() ?></h1>
+            <h2>via della lana<br>e della seta</h2>
+        </a>
     </header>
 
     <button id="menu-opener" class="menu-opener" type="button">
@@ -96,7 +98,11 @@
                                     <img src="<?= $item->url() ?>" alt="<?= $item->alt() ?>">
                                 </a>
                             <?php endif ?>
+                            <?php if($page->subtitle()->isNotEmpty()) : ?>
+                                <figcaption class="subtitle"><?= $page->subtitle() ?></figcaption>
+                            <?php endif ?>
                         </figure>
+                        
                     <?php endforeach ?>
                 </div>
             </nav>

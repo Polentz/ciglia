@@ -4,10 +4,13 @@ return [
     'debug'  => false,
     'languages' => true,
     'smartypants' => true,
+    'panel' =>[
+      'install' => true
+    ],
     'blocks' => [
         'fieldsets' => [
           'custom' => [
-            'label' => 'Selezione un blocco:',
+            'label' => 'Seleziona un blocco:',
             'type' => 'group',
             'fieldsets' => [
               'maintext',

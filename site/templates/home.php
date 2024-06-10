@@ -42,6 +42,7 @@
             </div>
         <?php endif ?>
     </div>
+    <?= snippet('player') ?>
 </main>
 
 <?= snippet('footer') ?>

@@ -9,7 +9,7 @@ return [
     ],
     'name' => 'English',
     'translations' => [
-
+        'play' => 'Play',
     ],
     'url' => NULL
 ];

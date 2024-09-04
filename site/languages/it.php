@@ -9,7 +9,7 @@ return [
     ],
     'name' => 'Italiano',
     'translations' => [
-
+        'play' => 'Ascolta',
     ],
     'url' => '/',
 ];

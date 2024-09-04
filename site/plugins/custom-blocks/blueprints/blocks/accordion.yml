@@ -1,11 +1,15 @@
-name: Esercizio
+name: Esercizio (accordion)
 icon: bars
+preview: fields
+wysiwyg: true
+label: false
 fields:
   header:
-    label: Header
+    label: Titolo dell'esercizio
     type: text
+    required: true
   body:
-    label: Content
+    label: Testo dell'esercizio
     type: writer
     marks:
       - bold
@@ -13,13 +17,15 @@ fields:
       - link
       - email
     nodes: false
+    required: true
   audiotitle:
     label: Titolo dell'ascolto
     type: text
+    # required: true
   audio:
-    label: Audio file
+    label: File audio
     type: files
     template: audio
     uploads: audio
     query: page.files.filterBy('template', 'audio')
-    multiple: false   
+    multiple: false

@@ -21,7 +21,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $site->title() ?></title>
-    <meta name="description"
+    <!-- <meta name="description"
         content="<?= $site->description() ?>">
     <link rel="canonical" href="<?= $page->url() ?>">
     <meta name="keywords"
@@ -45,7 +45,8 @@
     <?php if ($site->ogimage()->isNotEmpty()) : ?>
         <meta name="twitter:image:alt" content="<?= $site->ogimage()->toFile()->alt() ?>">
     <?php endif ?>
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"> -->
+    <meta name="robots" content="noindex,nofollow">
     <?= css ([
         'assets/css/base.css',
         'assets/css/style.css',
@@ -92,17 +93,14 @@
                 </ul>
                 <div class="page-nav">
                     <?php foreach($pages->listed()->not('home') as $page) : ?>
-                        <figure class="page-nav-item">
-                            <?php if($item = $page->cover()->toFile()) : ?>
-                                <a href="<?= $page->url() ?>">
+                        <a href="<?= $page->url() ?>" class="page-nav-url">
+                            <figure class="page-nav-item">
+                                <?php if($item = $page->cover()->toFile()) : ?>          
                                     <img src="<?= $item->url() ?>" alt="<?= $item->alt() ?>">
-                                </a>
-                            <?php endif ?>
-                            <?php if($page->subtitle()->isNotEmpty()) : ?>
-                                <figcaption class="subtitle"><?= $page->subtitle() ?></figcaption>
-                            <?php endif ?>
-                        </figure>
-                        
+                                <?php endif ?>
+                                <figcaption class="subtitle"><?= $page->title() ?></figcaption>
+                            </figure>
+                        </a>
                     <?php endforeach ?>
                 </div>
             </nav>

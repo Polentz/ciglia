@@ -3,7 +3,7 @@ options:
   preview: false
 
 accept: 
-  extension: jpg, png, jpeg
+  extension: jpg, png, jpeg, svg
 
 fields:
   caption:

@@ -25,6 +25,7 @@ columns:
             uploads: image
             query: page.images.filterBy('template', 'image')
             multiple: false
+            link: false
             image:
               icon: true
               ratio: 1/1

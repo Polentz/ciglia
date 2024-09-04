@@ -1,13 +1,17 @@
 name: Ascolto
 icon: play
+preview: fields
+wysiwyg: true
+label: false
 fields:
   audiotitle:
     label: Titolo dell'ascolto
     type: text
   audio:
-    label: Audio file
+    label: File audio
     type: files
     template: audio
     uploads: audio
     query: page.files.filterBy('template', 'audio')
     multiple: false
+    required: true

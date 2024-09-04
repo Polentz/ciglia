@@ -219,3 +219,7 @@ input[type=range]::-ms-track {
 ::-webkit-scrollbar {
     display: none;
 }
+
+*::selection {
+    background: #e7202d;
+}

@@ -5,9 +5,13 @@ fields:
   maintext:
     label: Testo
     type: writer
+    toolbar:
+      inline: true
+    nodes:
+      - quote
     marks:
       - bold
       - italic
       - link
-      - email
-    nodes: false
+      - '|'
+      - clear

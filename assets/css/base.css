@@ -221,5 +221,5 @@ input[type=range]::-ms-track {
 }
 
 *::selection {
-    background: #e7202d;
+    background: var(--accent-color);
 }

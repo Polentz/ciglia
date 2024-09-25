@@ -31,7 +31,7 @@
             </div>
         <?php endif ?>
         <?php if ($page->credits()->isNotEmpty()) : ?>
-            <div class="column-block">
+            <div id="credits" class="column-block">
                 <?= $page->credits()->kt() ?>
             </div>
         <?php endif ?>

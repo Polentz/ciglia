@@ -48,10 +48,12 @@ html {
 :root {
     --doc-height: 100%;
     --color: #1e1e1e;
+    --accent-color: #e7202d;
     --header-font-family: "Bricolage Grotesque", sans-serif;
     --header-font-size: 2rem;
     --header-font-weight: 800;
     --body-font-size: 1.2rem;
+    --small-font-size: 1rem;
     --title-font-family: "Bricolage Grotesque", sans-serif;
     --title-font-size: 1.2rem;
     --subtitle-font-family: "Bricolage Grotesque", sans-serif;
@@ -118,6 +120,10 @@ a {
     font-size: var(--header-font-size);
     font-weight: var(--header-font-weight);
     line-height: 1;
+}
+
+header h1 {
+    font-size: 4.4rem;
 }
 
 .menu-opener {
@@ -406,6 +412,13 @@ a {
     top: var(--main-margin);
 }
 
+.column blockquote {
+    font-family: "Basier Circle", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--small-font-size);
+}
+
 .column:nth-child(2),
 .column-block {
     display: -webkit-box;
@@ -432,6 +445,13 @@ a {
     gap: 2rem;
 }
 
+#credits {
+    font-family: "Basier Circle", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--small-font-size);
+}
+
 .logo-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -451,8 +471,7 @@ a {
 
 .logo-wrapper img {
     width: 100%;
-    max-width: 3rem;
-    max-height: 3rem;
+    max-height: 4rem;
     -o-object-fit: cover;
     object-fit: cover;
 }
@@ -728,12 +747,19 @@ input.seek-slider::-moz-range-thumb {
     display: none;
 }
 
-.main a {
+main a {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+}
+
+#contact a {
     position: relative;
+    text-decoration: none;
     white-space: nowrap;
 }
 
-.main a::before {
+#contact a::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -754,12 +780,12 @@ input.seek-slider::-moz-range-thumb {
     transition: transform .2s, -webkit-transform .2s;
 }
 
-.main a:hover::before {
+#contact a:hover::before {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
 }
 
-.main a::after {
+#contact a::after {
     content: "";
     position: absolute;
     width: 100%;
@@ -778,7 +804,7 @@ input.seek-slider::-moz-range-thumb {
     transform-origin: 50% 50%;
 }
 
-.main a:hover::after {
+#contact a:hover::after {
     -webkit-transform: scale3d(0, 1, 0);
     transform: scale3d(0, 1, 0);
 }
@@ -787,13 +813,14 @@ input.seek-slider::-moz-range-thumb {
     :root {
         --header-font-size: 1.5rem;
         --body-font-size: 1rem;
+        --small-font-size: .9rem;
         --title-font-size: 1rem;
         --subtitle-font-size: .75rem;
         --main-margin: 1.5rem .75rem;
         --margin-top: 1.5rem;
-        --margin-right: .75rem;
+        --margin-right: 1rem;
         --margin-bottom: 1.5rem;
-        --margin-left: .75rem;
+        --margin-left: 1rem;
         --column-margin: 2rem;
     }
 
@@ -811,9 +838,12 @@ input.seek-slider::-moz-range-thumb {
 
     .header {
         position: absolute;
-        bottom: var(--margin-bottom);
-        right: var(--margin-right);
-        text-align: end;
+        bottom: .75rem;
+        left: 50%;
+        text-align: center;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
         z-index: 1;
     }
 

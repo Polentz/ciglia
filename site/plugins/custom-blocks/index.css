@@ -18,6 +18,13 @@
     font-weight: 800;
 } */
 
+.k-text blockquote {
+    font-size: 0.9rem;
+    line-height: 1.25;
+    padding-inline-start: 0;
+    border-inline-start: none;
+}
+
 .k-field-name-audiotitle .k-input-element,
 .k-field-name-header .k-input-element {
     font-family: "Bricolage Grotesque", sans-serif;

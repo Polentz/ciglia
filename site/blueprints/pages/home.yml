@@ -59,8 +59,10 @@ columns:
             label: Crediti
             type: writer
             marks:
+              - bold
               - italic
               - link
-              - email
+              - '|'
+              - clear
             nodes: false
 

@@ -9,5 +9,6 @@ fields:
       - bold
       - italic
       - link
-      - email
+      - '|'
+      - clear
     nodes: false

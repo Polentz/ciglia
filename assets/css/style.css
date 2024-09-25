@@ -442,7 +442,9 @@ header h1 {
     flex-direction: row;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 1rem;
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
 }
 
 #credits {
@@ -471,7 +473,7 @@ header h1 {
 
 .logo-wrapper img {
     width: 100%;
-    max-height: 4rem;
+    max-height: 5rem;
     -o-object-fit: cover;
     object-fit: cover;
 }

@@ -10,7 +10,10 @@ Blocks: [{"content":{"maintext":"<p>Lorem ipsum dolor sit amet, consectetur adip
 
 ----
 
-Partners: 
+Partners:
+
+- file://kqlRrhAV949lB9Dz
+- file://NZ6UGUWcuYKnMCOc
 
 ----
 

@@ -21,7 +21,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $site->title() ?></title>
-    <!-- <meta name="description"
+    <meta name="description"
         content="<?= $site->description() ?>">
     <link rel="canonical" href="<?= $page->url() ?>">
     <meta name="keywords"
@@ -45,8 +45,7 @@
     <?php if ($site->ogimage()->isNotEmpty()) : ?>
         <meta name="twitter:image:alt" content="<?= $site->ogimage()->toFile()->alt() ?>">
     <?php endif ?>
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"> -->
-    <meta name="robots" content="noindex,nofollow">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <?= css ([
         'assets/css/base.css',
         'assets/css/style.css',

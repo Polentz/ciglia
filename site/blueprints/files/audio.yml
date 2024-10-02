@@ -1,5 +1,6 @@
 title: Audio
 
 accept: 
+  mime: audio/*
   extension: mp3
   type: audio

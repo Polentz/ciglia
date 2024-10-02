@@ -1023,6 +1023,13 @@ main a {
     .audio-button::before {
         content: none;
     }
+
+    .logo-wrapper img {
+        width: 100%;
+        max-height: 2.5rem;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
 }
 
 @media screen and (max-width: 680px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
@@ -1031,6 +1038,7 @@ main a {
         top: var(--margin-top);
         left: var(--margin-left);
         text-align: start;
+        transform: none;
         z-index: 7;
     }
 

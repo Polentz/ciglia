@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciglia</title>
+    <meta name="robots" content="noindex,nofollow">
+    <link rel="stylesheet" href="./assets/css/base.css">
+</head>
+<style>
+    @charset "UTF-8";
+
+    @font-face {
+        font-family: "Basier Circle";
+        font-style: normal;
+        font-weight: 400;
+        src: url("./assets/fonts/basiercircle-regular.woff2") format("woff2"),
+            url("./assets/fonts/basiercircle-regular.woff") format("woff"),
+    }
+
+    @font-face {
+        font-family: "Basier Circle";
+        font-style: italic;
+        font-weight: 400;
+        src: url("./assets/fonts/basiercircle-regularitalic.woff2") format("woff2"),
+            url("./assets/fonts/basiercircle-regularitalic.woff") format("woff"),
+    }
+
+    @font-face {
+        font-family: "Basier Circle";
+        font-style: normal;
+        font-weight: 600;
+        src: url("./assets/fonts/basiercircle-medium.woff2") format("woff2"),
+            url("./assets/fonts/basiercircle-medium.woff") format("woff"),
+    }
+
+    @font-face {
+        font-family: "Basier Circle";
+        font-style: italic;
+        font-weight: 600;
+        src: url("./assets/fonts/basiercircle-mediumitalic.woff2") format("woff2"),
+            url("./assets/fonts/basiercircle-mediumitalic.woff") format("woff"),
+    }
+
+    @font-face {
+        font-family: "Bricolage Grotesque";
+        font-style: normal;
+        font-weight: 800;
+        src: url("./assets/fonts/bricolagegrotesque-extrabold.woff2") format("woff2"),
+            url("./assets/fonts/bricolagegrotesque-extrabold.woff") format("woff"),
+    }
+
+    html {
+        font-size: 100%;
+        scroll-behavior: smooth;
+    }
+
+    :root {
+        --doc-height: 100%;
+        --color: #1e1e1e;
+        --accent-color: #e7202d;
+        --header-font-family: "Bricolage Grotesque", sans-serif;
+        --header-font-size: 2rem;
+        --header-font-weight: 800;
+        --body-font-size: 1.2rem;
+        --small-font-size: 1rem;
+        --title-font-family: "Bricolage Grotesque", sans-serif;
+        --title-font-size: 1.2rem;
+        --subtitle-font-family: "Bricolage Grotesque", sans-serif;
+        --subtitle-font-size: .8rem;
+        --main-margin: 6rem;
+        --column-margin: 2.5rem;
+    }
+
+    body {
+        font-family: "Basier Circle", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: var(--body-font-size);
+        color: var(--color);
+        margin: var(--main-margin);
+        overflow-x: hidden;
+    }
+
+    strong {
+        font-weight: 600;
+    }
+
+    em {
+        font-style: italic;
+    }
+
+    a {
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+    }
+
+    .header {
+        font-family: var(--header-font-family);
+        font-size: var(--header-font-size);
+        font-weight: var(--header-font-weight);
+        line-height: 1;
+    }
+
+    header h1 {
+        font-size: 4.4rem;
+    }
+
+    .main {
+        width: 100%;
+        height: auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .audio-button {
+        width: -webkit-fit-content;
+        width: -moz-fit-content;
+        width: fit-content;
+        font-family: var(--title-font-family);
+        font-size: var(--title-font-size);
+        font-weight: var(--header-font-weight);
+        cursor: pointer;
+        -webkit-transition: gap .2s ease;
+        -o-transition: gap .2s ease;
+        transition: gap .2s ease;
+    }
+
+    .audio-button:hover {
+        gap: 2.5rem;
+    }
+
+    .audio-button span {
+        position: relative;
+        line-height: 1.2;
+    }
+
+    .audio-button span::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background: var(--color);
+        top: 95%;
+        left: 0;
+        pointer-events: none;
+        -webkit-transform-origin: 50% 50%;
+        -ms-transform-origin: 50% 50%;
+        transform-origin: 50% 50%;
+        -webkit-transform: scale3d(0, 1, 1);
+        transform: scale3d(0, 1, 1);
+        -webkit-transition: -webkit-transform .2s;
+        transition: -webkit-transform .2s;
+        -o-transition: transform .2s;
+        transition: transform .2s;
+        transition: transform .2s, -webkit-transform .2s;
+    }
+
+    .audio-button span:hover::before {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+
+    .audio-component {
+        width: 50%;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    .audio-player {
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        padding: 1rem 3rem;
+        background-color: #fff;
+        border: solid 3px var(--color);
+        border-radius: 4rem;
+    }
+
+    .audio-player svg {
+        width: 1.2rem;
+        height: 1.2rem;
+        stroke: var(--color);
+        stroke-width: 2px;
+    }
+
+    .audio-player-wrapper {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        font-family: var(--subtitle-font-family);
+        font-size: var(--subtitle-font-size);
+        font-weight: var(--header-font-weight);
+    }
+
+    .audio-player-wrapper:nth-child(2) {
+        min-width: 65%;
+    }
+
+    .audio-title {
+        margin-right: 2rem;
+    }
+
+    .audio-progress {
+        white-space: nowrap;
+    }
+
+    .seek-slider-container {
+        width: 100%;
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .seek-slider-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: var(--seek-before-width);
+        height: 2px;
+        background: var(--color);
+        pointer-events: none;
+    }
+
+    input.seek-slider {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 1px;
+        margin: 0;
+        padding: 0;
+        border: 1px dashed var(--color);
+        cursor: pointer;
+    }
+
+    input.seek-slider::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 2px;
+        cursor: pointer;
+    }
+
+    input.seek-slider::-moz-range-track {
+        width: 100%;
+        height: 2px;
+        cursor: pointer;
+    }
+
+    input.seek-slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        height: 0;
+        width: 0;
+        margin: 0;
+    }
+
+    input.seek-slider::-moz-range-thumb {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        height: 0;
+        width: 0;
+    }
+
+    .play-btn,
+    .audio-volume {
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        cursor: pointer;
+    }
+
+    .play-icon.--toggle-play {
+        opacity: 0;
+    }
+
+    .pause-icon {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .pause-icon.--toggle-play {
+        opacity: 1;
+    }
+
+    .volume-icon.--toggle-volume {
+        opacity: 0;
+    }
+
+    .mute-icon {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .mute-icon.--toggle-volume {
+        opacity: 1;
+    }
+
+    @media screen and (max-width: 900px) and (-webkit-min-device-pixel-ratio: 2) {
+        :root {
+            --header-font-size: 1.5rem;
+            --body-font-size: 1rem;
+            --small-font-size: .9rem;
+            --title-font-size: 1rem;
+            --subtitle-font-size: .75rem;
+            --main-margin: 1.5rem .75rem;
+            --margin-top: 1.5rem;
+            --margin-right: 1rem;
+            --margin-bottom: 1.5rem;
+            --margin-left: 1rem;
+            --column-margin: 2rem;
+        }
+
+        body {
+            background-color: var(--color);
+            color: white;
+        }
+
+        .header {
+            position: absolute;
+            bottom: .75rem;
+            left: 50%;
+            line-height: 1.2;
+            text-align: center;
+            -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .audio-component {
+            width: 100%;
+            z-index: 7;
+        }
+
+        .audio-player {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            gap: .5rem;
+            padding: 1rem 2rem;
+            background-color: var(--color);
+            border: none;
+            border-radius: 0;
+            color: #fff;
+        }
+
+        .audio-player svg {
+            width: 1.2rem;
+            height: 1.2rem;
+            stroke: #fff;
+            stroke-width: 1.5px;
+        }
+
+        .audio-player-wrapper {
+            min-width: 100%;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+
+        .audio-player-wrapper:nth-child(2) {
+            min-width: 100%;
+        }
+
+        .seek-slider-container::before {
+            background-color: #fff;
+        }
+
+        input.seek-slider {
+            border: 1px dashed #fff;
+        }
+    }
+
+    @media screen and (max-width: 680px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+        .header {
+            position: absolute;
+            top: 1rem;
+            left: 2rem;
+            text-align: start;
+            transform: none;
+            z-index: 7;
+        }
+    }
+</style>
+
+<body>
+    <header class="header">
+        <a href="https://ciglia.eu/">
+            <h1>Ciglia</h1>
+        </a>
+    </header>
+    <main>
+        <div class="audio-component">
+            <div class="audio-player">
+                <div class="audio-player-wrapper">
+                    <p class="audio-title">Pink Noise</p>
+                    <div class="audio-time">
+                        <span class="audio-progress">0:00</span>
+                    </div>
+                </div>
+                <div class="audio-player-wrapper">
+                    <button class="play-btn" type="button">
+                        <svg class="play-icon" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M13 25C19.6274 25 25 19.6274 25 13C25 6.37258 19.6274 1 13 1C6.37258 1 1 6.37258 1 13C1 19.6274 6.37258 25 13 25Z" />
+                            <path d="M17 13L11 9V17L17 13Z" />
+                        </svg>
+                        <svg class="pause-icon" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10 9V17M16 9V17M25 13C25 19.6274 19.6274 25 13 25C6.37258 25 1 19.6274 1 13C1 6.37258 6.37258 1 13 1C19.6274 1 25 6.37258 25 13Z" />
+                        </svg>
+                    </button>
+                    <div class="seek-slider-container">
+                        <input class="seek-slider" max="100" value="0" type="range">
+                    </div>
+                    <button class="audio-volume" type="button">
+                        <svg class="volume-icon" viewBox="0 0 30 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8.5 18H2.5C2.23478 18 1.98043 17.8946 1.79289 17.7071C1.60536 17.5196 1.5 17.2652 1.5 17V9C1.5 8.73478 1.60536 8.48043 1.79289 8.29289C1.98043 8.10536 2.23478 8 2.5 8H8.5M8.5 18L17.5 25V1L8.5 8M8.5 18V8M22.5 10.3563C23.1433 11.0867 23.4982 12.0267 23.4982 13C23.4982 13.9734 23.1433 14.9133 22.5 15.6438M26.2085 7C27.6844 8.65007 28.5003 10.7862 28.5003 13C28.5003 15.2138 27.6844 17.3499 26.2085 19" />
+                        </svg>
+                        <svg class="mute-icon" viewBox="0 0 30 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M4.5 2L24.5 24M8.5 8V18M8.5 8L2.5 7.99999C2.23478 7.99999 1.98043 8.10535 1.79289 8.29289C1.60536 8.48042 1.5 8.73478 1.5 8.99999V17C1.5 17.2652 1.60536 17.5196 1.79289 17.7071C1.98043 17.8946 2.23478 18 2.5 18L8.5 18M8.5 8L9.3525 7.33749M8.5 18L17.5 25V16.3M22.5 10.3588C23.1433 11.0892 23.4982 12.0292 23.4982 13.0025C23.4982 13.9759 23.1433 14.9158 22.5 15.6463M12.5187 4.87375L17.5 1V10.3538M26.2087 7C27.6846 8.65007 28.5005 10.7862 28.5005 13C28.5005 15.2138 27.6846 17.3499 26.2087 19" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <audio src="https://ciglia.eu/media/pages/suoni-fissati/d628cff04a-1727796774/pink-noise-96k-13-minuti.mp3"
+                preload="metadata"></audio>
+        </div>
+    </main>
+</body>
+<script>
+    const documentHeight = () => {
+        const doc = document.documentElement;
+        doc.style.setProperty("--doc-height", `${window.innerHeight}px`);
+    };
+
+    const audioPlayer = () => {
+        const audioFile = document.querySelector("audio");
+        const audioComponent = document.querySelector(".audio-component");
+        const audioPlayer = audioComponent.querySelector(".audio-player");
+        const audioPlayerTitle = audioComponent.querySelector(".audio-title");
+        const currentTimeContainer = audioComponent.querySelector(".audio-progress");
+        const seekSlider = audioComponent.querySelector(".seek-slider");
+        const playButton = audioComponent.querySelector(".play-btn");
+        const volumeButton = audioComponent.querySelector(".audio-volume");
+        const playIcon = audioComponent.querySelector(".play-icon");
+        const pauseIcon = audioComponent.querySelector(".pause-icon");
+        const volumeIcon = audioComponent.querySelector(".volume-icon");
+        const muteIcon = audioComponent.querySelector(".mute-icon");
+        let raf = null;
+
+        const calculateTime = (sec) => {
+            let minutes = Math.floor(sec / 60);
+            let seconds = Math.floor(sec - minutes * 60);
+            if (seconds < 10) {
+                seconds = `0${seconds}`;
+            }
+            return `${minutes}:${seconds}`;
+        };
+
+        const whilePlaying = (audio) => {
+            seekSlider.value = Math.floor(audio.currentTime);
+            currentTimeContainer.textContent = calculateTime(seekSlider.value);
+            audioPlayer.style.setProperty("--seek-before-width", `${seekSlider.value / seekSlider.max * 100}%`);
+            raf = requestAnimationFrame(() => whilePlaying(audio));
+        };
+
+        playButton.onclick = () => {
+            if (audioFile.paused) {
+                audioFile.play();
+                requestAnimationFrame(() => whilePlaying(audioFile));
+            } else {
+                audioFile.pause();
+            };
+            playIcon.classList.toggle("--toggle-play");
+            pauseIcon.classList.toggle("--toggle-play");
+        };
+
+        volumeButton.onclick = () => {
+            if (audioFile.volume > 0) {
+                audioFile.volume = 0;
+                volumeIcon.classList.add("--toggle-volume");
+                muteIcon.classList.add("--toggle-volume");
+            } else {
+                audioFile.volume = 1;
+                volumeIcon.classList.remove("--toggle-volume");
+                muteIcon.classList.remove("--toggle-volume");
+            };
+        };
+
+        const showRangeProgress = (rangeInput) => {
+            audioPlayer.style.setProperty("--seek-before-width", rangeInput.value / rangeInput.max * 100 + "%");
+        };
+
+        seekSlider.addEventListener("input", (e) => {
+            showRangeProgress(e.target);
+        });
+
+        const setSliderMax = () => {
+            seekSlider.max = Math.floor(audioFile.duration);
+        };
+
+        if (audioFile.readyState > 0) {
+            setSliderMax();
+        };
+
+        audioFile.addEventListener("playing", () => {
+            setSliderMax();
+        });
+
+        seekSlider.addEventListener("input", () => {
+            currentTimeContainer.textContent = calculateTime(seekSlider.value);
+            if (!audioFile.paused) {
+                cancelAnimationFrame(raf);
+            };
+        });
+
+        seekSlider.addEventListener("change", () => {
+            audioFile.currentTime = seekSlider.value;
+            if (!audioFile.paused) {
+                requestAnimationFrame(() => whilePlaying(audioFile));
+            };
+        });
+    };
+
+    window.addEventListener("load", () => {
+        history.scrollRestoration = "manual";
+        documentHeight();
+        audioPlayer();
+    });
+
+    window.addEventListener("resize", () => {
+        documentHeight();
+    });
+</script>
+
+</html>

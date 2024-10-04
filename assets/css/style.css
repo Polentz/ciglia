@@ -488,8 +488,9 @@ header h1 {
     font-weight: var(--header-font-weight);
 }
 
+.column-title:not(:nth-child(1)),
 .accordion:not(:nth-child(1)),
-.column-title:not(:nth-child(1)) {
+.audio-button:not(:nth-child(1)) {
     margin-top: 2rem;
 }
 

@@ -21,12 +21,15 @@
         <?php if ($page->partners()->isNotEmpty()) : ?>
             <div id="partners" class="column-block">
                 <?php foreach($page->partners()->toFiles() as $logo) : ?>
-                    <figure class="logo-wrapper">
-                        <img src="<?= $logo->url() ?>" alt="<?= $logo->alt() ?>">
-                        <?php if ($logo->caption()->isNotEmpty()) : ?>
-                            <figcaption><?= $logo->caption()->kt() ?></figcaption>
-                        <?php endif ?>
-                    </figure>
+                    <?php if ($logo->link()->isNotEmpty()) : ?>
+                        <a class="logo-wrapper" href="<?= $logo->link()->url() ?>" target="_blank" rel="noopener noreferrer">
+                            <img src="<?= $logo->url() ?>" alt="partner's logo">
+                        </a>
+                    <?php else : ?>
+                        <figure class="logo-wrapper">
+                            <img src="<?= $logo->url() ?>" alt="partner's logo">
+                        </figure>
+                    <?php endif ?>
                 <?php endforeach ?>
             </div>
         <?php endif ?>

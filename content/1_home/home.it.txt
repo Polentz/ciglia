@@ -12,8 +12,12 @@ Blocks: [{"content":{"maintext":"<p>Lorem ipsum dolor sit amet, consectetur adip
 
 Partners:
 
+- file://qBbC1gXAIfOoZ8UN
 - file://kqlRrhAV949lB9Dz
-- file://NZ6UGUWcuYKnMCOc
+- file://TdaiQboLB35jUFUO
+- file://jhlRPXNWCBPIG1G3
+- file://ISbH1lXW1oZptVWE
+- file://Cq0z9XDGWqUwIoOf
 
 ----
 

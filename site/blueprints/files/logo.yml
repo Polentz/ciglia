@@ -7,11 +7,7 @@ accept:
   maxsize: 1258291
 
 fields:
-  caption:
+  link:
     width: 1/2
-    label: Didascalia
-    type: text
-  alt:
-    type: text
-    width: 1/2
-    label: Alt Tag
+    label: Link
+    type: url

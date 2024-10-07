@@ -1,0 +1,9 @@
+Link: https://loremipsum.io/
+
+----
+
+Uuid: qBbC1gXAIfOoZ8UN
+
+----
+
+Template: logo
